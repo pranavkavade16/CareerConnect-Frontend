@@ -5,7 +5,6 @@ body {
   font-family: 'Syne', sans-serif;
 }
 
-/* Text */
 
 .white-text{
   color:#0f172a;
@@ -19,7 +18,7 @@ body {
   color:#6366f1;
 }
 
-/* Navbar Buttons */
+
 
 .nav-buttons{
   display:flex;
@@ -44,7 +43,7 @@ body {
   color:white;
 }
 
-/* Buttons */
+
 
 .btn-view{
   background:#6366f1;
@@ -58,7 +57,7 @@ body {
   color:#ef4444;
 }
 
-/* Job Type Badge */
+
 
 .job-type{
   font-size:12px;
@@ -99,7 +98,7 @@ body {
   border:1px solid #e5e7eb;
 }
 
-/* Job Cards */
+
 
 .job-card{
   background:#ffffff;
@@ -117,7 +116,6 @@ body {
   transform:translateY(-2px);
 }
 
-/* Info boxes inside JobDetails */
 
 .job-info-card{
   background:#f8fafc;
@@ -136,7 +134,6 @@ body {
   color:#15803d;
 }
 
-/* Divider */
 
 .section-divider{
   border-color:#e5e7eb;
