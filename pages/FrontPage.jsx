@@ -28,7 +28,7 @@ const FrontPage = () => {
     }
   };
 
-  /* Loading */
+  
   if (jobLoading)
     return (
       <div className="d-flex flex-column justify-content-center align-items-center vh-100">
@@ -37,7 +37,7 @@ const FrontPage = () => {
       </div>
     );
 
-  /* Error */
+ 
   if (jobError)
     return (
       <div className="d-flex flex-column justify-content-center align-items-center vh-100">
@@ -45,7 +45,7 @@ const FrontPage = () => {
       </div>
     );
 
-  /* No jobs */
+
   if (jobList.length === 0)
     return (
       <div className="d-flex flex-column justify-content-center align-items-center vh-100">
@@ -55,7 +55,7 @@ const FrontPage = () => {
 
   return (
     <div className="container py-3">
-      {/* Heading */}
+
       <div className="mb-4">
         <h1 className="fw-bold white-text display-6 display-md-5">
           Find your next <span className="green-text">Opportunity</span>
@@ -65,7 +65,7 @@ const FrontPage = () => {
         </p>
       </div>
 
-      {/* Search Bar */}
+     
       <div className="input-group mb-4">
         <span className="input-group-text bg-white border-end-0">
           <i className="bi bi-search"></i>

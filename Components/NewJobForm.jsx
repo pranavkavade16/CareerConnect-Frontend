@@ -108,7 +108,6 @@ const NewJobForm = () => {
         <p className="gray-text">Create a new job posting for candidates.</p>
         <hr />
 
-        {/* Job Title */}
         <div className="m-2">
           <label className="form-label">
             <strong>Job Title *</strong>
@@ -126,7 +125,6 @@ const NewJobForm = () => {
           </div>
         </div>
 
-        {/* Company */}
         <div className="m-2">
           <label className="form-label">
             <strong>Company Name *</strong>
@@ -144,7 +142,6 @@ const NewJobForm = () => {
           </div>
         </div>
 
-        {/* Salary */}
         <div className="m-2">
           <label className="form-label">
             <strong>Salary *</strong>
@@ -162,7 +159,6 @@ const NewJobForm = () => {
           </div>
         </div>
 
-        {/* Locations */}
         <div className="m-2">
           <label className="form-label">
             <strong>Locations *</strong>
@@ -180,7 +176,6 @@ const NewJobForm = () => {
           </div>
         </div>
 
-        {/* Job Type */}
         <div className="m-2">
           <label className="form-label">
             <strong>Job Type</strong>
@@ -200,7 +195,6 @@ const NewJobForm = () => {
           </select>
         </div>
 
-        {/* Description */}
         <div className="m-2">
           <label className="form-label">
             <strong>Job Description *</strong>
@@ -215,7 +209,6 @@ const NewJobForm = () => {
           />
         </div>
 
-        {/* Qualifications */}
         <div className="m-2">
           <label className="form-label">
             <strong>Qualifications</strong>
@@ -233,7 +226,6 @@ const NewJobForm = () => {
           </div>
         </div>
 
-        {/* Submit */}
         <div className="m-3 mt-4">
           <button
             className="nav-btn btn-view"

@@ -9,17 +9,27 @@ const JobDetails = () => {
   const jobList = Array.isArray(jobData?.jobs) ? jobData.jobs : [];
   const selectedJob = jobList.find((job) => job._id === jobId);
 
-  if (jobLoading) {
-    return <p>Loading job details...</p>;
-  }
+  if (jobLoading)
+    return (
+      <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+        <div className="spinner-border text-dark mb-3" role="status"></div>
+        <p className="text-dark fs-5">Loading...</p>
+      </div>
+    );
 
-  if (jobError) {
-    return <p>Error loading job</p>;
-  }
+  if (jobError)
+    return (
+      <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+        <p className="text-danger fs-5">Error: {jobError}</p>
+      </div>
+    );
 
-  if (!selectedJob) {
-    return <p>Job not found</p>;
-  }
+  if (!selectedJob)
+    return (
+      <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+        <p className="text-muted fs-5">No Data Available.</p>
+      </div>
+    );
 
   return (
     <div>

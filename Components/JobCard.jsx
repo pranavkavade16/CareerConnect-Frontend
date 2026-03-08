@@ -22,7 +22,7 @@ const JobCard = ({ job, deleteJob }) => {
   return (
     <div className="job-card">
       <div className="card-body d-flex flex-column">
-        {/* Header */}
+     
         <div className="d-flex flex-wrap justify-content-between align-items-start">
           <div className="me-2">
             <h5 className="fw-semibold text-break">{job?.title}</h5>
@@ -34,12 +34,12 @@ const JobCard = ({ job, deleteJob }) => {
           </div>
         </div>
 
-        {/* Location */}
+      
         <div>
           <p className="text-break">Locations: {job?.locations?.join(", ")}</p>
         </div>
 
-        {/* Buttons */}
+
         <div className="d-flex flex-column flex-sm-row justify-content-between gap-2">
           <Link
             className="nav-btn active w-100 d-flex justify-content-center align-items-center"
