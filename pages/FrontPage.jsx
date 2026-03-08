@@ -6,25 +6,20 @@ const FrontPage = () => {
   const { jobs, setJobs, showToast, jobLoading, jobError } = useJobContext();
 
   const jobList = Array.isArray(jobs) ? jobs : [];
-
   const { search, setSearch, searchedJobs } = useSearch(jobList);
 
   const handleDeleteJob = async (jobId) => {
     try {
       const response = await fetch(
         `https://career-connect-backend-rust.vercel.app/job/${jobId}`,
-        {
-          method: "DELETE",
-        },
+        { method: "DELETE" },
       );
 
       if (!response.ok) {
         throw new Error("Failed to delete the job");
       }
 
-      const deletedJob = await response.json();
-
-      console.log("Job deleted successfully", deletedJob);
+      await response.json();
 
       setJobs((prev) => prev.filter((job) => job._id !== jobId));
       showToast("Job deleted successfully.");
@@ -33,41 +28,45 @@ const FrontPage = () => {
     }
   };
 
+  /* Loading */
   if (jobLoading)
     return (
-      <div>
-        <div className="d-flex flex-column justify-content-center align-items-center vh-100">
-          <div className="spinner-border text-dark mb-3" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-          <p className="text-dark fs-5">Loading...</p>
-        </div>
+      <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+        <div className="spinner-border text-dark mb-3" role="status"></div>
+        <p className="text-dark fs-5">Loading...</p>
       </div>
     );
+
+  /* Error */
   if (jobError)
     return (
-      <div>
-        <div className="d-flex flex-column justify-content-center align-items-center vh-100">
-          <p className="text-dark fs-5">Error: {leadsError || agentsError}</p>
-        </div>
+      <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+        <p className="text-danger fs-5">Error: {jobError}</p>
       </div>
     );
+
+  /* No jobs */
   if (jobList.length === 0)
     return (
-      <div>
-        <div className="d-flex flex-column justify-content-center align-items-center vh-100">
-          <p className="text-dark fs-5">No Data Available.</p>
-        </div>
+      <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+        <p className="text-muted fs-5">No Data Available.</p>
       </div>
     );
 
   return (
-    <div className="m-5">
-      <h1 className="display-4 white-text">
-        Find your next <span className="green-text">Opportunity</span>
-      </h1>
+    <div className="container py-3">
+      {/* Heading */}
+      <div className="mb-4">
+        <h1 className="fw-bold white-text display-6 display-md-5">
+          Find your next <span className="green-text">Opportunity</span>
+        </h1>
+        <p className="gray-text">
+          Discover opportunities at the world's most innovative companies.
+        </p>
+      </div>
 
-      <div className="input-group mb-3 w-100">
+      {/* Search Bar */}
+      <div className="input-group mb-4">
         <span className="input-group-text bg-white border-end-0">
           <i className="bi bi-search"></i>
         </span>
@@ -75,24 +74,22 @@ const FrontPage = () => {
         <input
           type="text"
           className="form-control border-start-0"
-          placeholder="Search projects and tasks..."
+          placeholder="Search jobs..."
           value={search}
-          onChange={(event) => setSearch(event.target.value)}
+          onChange={(e) => setSearch(e.target.value)}
         />
       </div>
 
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-xl-2 g-3 mt-5">
+      <div className="row g-4">
         {searchedJobs.length > 0 ? (
           searchedJobs.map((job) => (
-            <div key={job._id}>
+            <div key={job._id} className="col-12 col-md-6 col-xl-6">
               <JobCard job={job} deleteJob={handleDeleteJob} />
             </div>
           ))
         ) : (
-          <div>
-            <div className="d-flex flex-column justify-content-center align-items-center vh-100">
-              <p className="text-dark fs-5">No Jobs Found!!</p>
-            </div>
+          <div className="text-center mt-5">
+            <p className="text-muted fs-5">No Jobs Found</p>
           </div>
         )}
       </div>

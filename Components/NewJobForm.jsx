@@ -16,7 +16,7 @@ const NewJobForm = () => {
   const [qualificationInput, setQualificationInput] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const { setJobs } = useJobContext;
+  const { setJobs } = useJobContext();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -47,6 +47,7 @@ const NewJobForm = () => {
     "Full-time (Remote)",
     "Part-time (Remote)",
   ];
+
   const handleSubmit = async () => {
     if (isSubmitting) return;
 
@@ -76,6 +77,7 @@ const NewJobForm = () => {
 
       const data = await response.json();
       console.log("Job Added:", data);
+
       setJobs((prev) => [data.savedJob, ...prev]);
 
       showToast("Job added successfully");
@@ -100,18 +102,19 @@ const NewJobForm = () => {
   };
 
   return (
-    <div className="job-card m-5">
+    <div className="job-card m-2 m-md-4 m-lg-5">
       <div className="card-body">
         <h3>Add New Job</h3>
         <p className="gray-text">Create a new job posting for candidates.</p>
         <hr />
 
+        {/* Job Title */}
         <div className="m-2">
           <label className="form-label">
             <strong>Job Title *</strong>
           </label>
 
-          <div className="input-group w-50">
+          <div className="input-group w-100 w-md-75 w-lg-50">
             <input
               type="text"
               className="form-control"
@@ -123,12 +126,13 @@ const NewJobForm = () => {
           </div>
         </div>
 
+        {/* Company */}
         <div className="m-2">
           <label className="form-label">
             <strong>Company Name *</strong>
           </label>
 
-          <div className="input-group w-50">
+          <div className="input-group w-100 w-md-75 w-lg-50">
             <input
               type="text"
               className="form-control"
@@ -140,12 +144,13 @@ const NewJobForm = () => {
           </div>
         </div>
 
+        {/* Salary */}
         <div className="m-2">
           <label className="form-label">
             <strong>Salary *</strong>
           </label>
 
-          <div className="input-group w-50">
+          <div className="input-group w-100 w-md-75 w-lg-50">
             <input
               type="number"
               className="form-control"
@@ -157,12 +162,13 @@ const NewJobForm = () => {
           </div>
         </div>
 
+        {/* Locations */}
         <div className="m-2">
           <label className="form-label">
             <strong>Locations *</strong>
           </label>
 
-          <div className="input-group w-50">
+          <div className="input-group w-100 w-md-75 w-lg-50">
             <input
               type="text"
               className="form-control"
@@ -174,13 +180,14 @@ const NewJobForm = () => {
           </div>
         </div>
 
+        {/* Job Type */}
         <div className="m-2">
           <label className="form-label">
             <strong>Job Type</strong>
           </label>
 
           <select
-            className="form-select w-50"
+            className="form-select w-100 w-md-75 w-lg-50"
             name="jobType"
             value={formData.jobType}
             onChange={handleChange}
@@ -193,13 +200,14 @@ const NewJobForm = () => {
           </select>
         </div>
 
+        {/* Description */}
         <div className="m-2">
           <label className="form-label">
             <strong>Job Description *</strong>
           </label>
 
           <textarea
-            className="form-control w-50"
+            className="form-control w-100 w-md-75 w-lg-50"
             rows="4"
             name="jobDescription"
             value={formData.jobDescription}
@@ -207,12 +215,13 @@ const NewJobForm = () => {
           />
         </div>
 
+        {/* Qualifications */}
         <div className="m-2">
           <label className="form-label">
             <strong>Qualifications</strong>
           </label>
 
-          <div className="input-group w-50">
+          <div className="input-group w-100 w-md-75 w-lg-50">
             <input
               type="text"
               className="form-control"
@@ -224,6 +233,7 @@ const NewJobForm = () => {
           </div>
         </div>
 
+        {/* Submit */}
         <div className="m-3 mt-4">
           <button
             className="nav-btn btn-view"
