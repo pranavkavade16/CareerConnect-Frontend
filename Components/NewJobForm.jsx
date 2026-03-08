@@ -16,7 +16,7 @@ const NewJobForm = () => {
   const [qualificationInput, setQualificationInput] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const { setJobs } = useJobContext();
+  const { setJobs, showToast } = useJobContext();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
