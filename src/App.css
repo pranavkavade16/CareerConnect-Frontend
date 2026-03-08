@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&display=swap');
+
+body {
+  background-color: #f8fafc;
+  font-family: 'Syne', sans-serif;
+}
+
+/* Text */
+
+.white-text{
+  color:#0f172a;
+}
+
+.gray-text{
+  color:#6b7280;
+}
+
+.green-text{
+  color:#6366f1;
+}
+
+/* Navbar Buttons */
+
+.nav-buttons{
+  display:flex;
+  gap:8px;
+}
+
+.nav-btn{
+  padding:8px 18px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:14px;
+  cursor:pointer;
+  transition:all 0.25s ease;
+  background:#eef2ff;
+  border:1px solid #e0e7ff;
+  color:#6366f1;
+  text-decoration:none;
+}
+
+.nav-btn:hover{
+  background:#6366f1;
+  color:white;
+}
+
+/* Buttons */
+
+.btn-view{
+  background:#6366f1;
+  border:1px solid #6366f1;
+  color:#fff;
+}
+
+.btn-delete{
+  background:#fef2f2;
+  border:1px solid #fecaca;
+  color:#ef4444;
+}
+
+/* Job Type Badge */
+
+.job-type{
+  font-size:12px;
+  font-weight:600;
+  padding:3px 12px;
+  border-radius:20px;
+  letter-spacing:0.5px;
+  display:inline-block;
+}
+
+.job-full-remote{
+  background:#dbeafe;
+  color:#1d4ed8;
+  border:1px solid #bfdbfe;
+}
+
+.job-part-remote{
+  background:#fce7f3;
+  color:#be185d;
+  border:1px solid #fbcfe8;
+}
+
+.job-full-onsite{
+  background:#dcfce7;
+  color:#15803d;
+  border:1px solid #bbf7d0;
+}
+
+.job-part-onsite{
+  background:#fef9c3;
+  color:#a16207;
+  border:1px solid #fde68a;
+}
+
+.job-default{
+  background:#f3f4f6;
+  color:#374151;
+  border:1px solid #e5e7eb;
+}
+
+/* Job Cards */
+
+.job-card{
+  background:#ffffff;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  padding:24px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  transition:all 0.25s ease;
+}
+
+.job-card:hover{
+  border:1px solid #6366f1;
+  transform:translateY(-2px);
+}
+
+/* Info boxes inside JobDetails */
+
+.job-info-card{
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+}
+
+.job-location{
+  color:#1d4ed8;
+}
+
+.job-salary{
+  color:#6366f1;
+}
+
+.job-type-info{
+  color:#15803d;
+}
+
+/* Divider */
+
+.section-divider{
+  border-color:#e5e7eb;
+  opacity:0.6;
+}
